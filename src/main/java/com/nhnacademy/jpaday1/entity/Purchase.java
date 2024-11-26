@@ -1,9 +1,6 @@
 package com.nhnacademy.jpaday1.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,8 +20,8 @@ public class Purchase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int purchaseId;
 
-    @Length(max = 50)
-    private String userId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Users user;
 
     @NotNull
     private ZonedDateTime purchasedAt;

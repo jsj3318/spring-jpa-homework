@@ -1,9 +1,6 @@
 package com.nhnacademy.jpaday1.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -23,9 +20,8 @@ public class PointHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int historyId;
 
-    @NotBlank
-    @Length(max = 50)
-    private String userId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Users user;
 
     @NotNull
     private int changeAmount;
