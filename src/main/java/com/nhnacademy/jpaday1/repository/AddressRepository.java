@@ -8,9 +8,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface AddressRepository extends JpaRepository<Address, Integer> {
-    int countAllByUser_UserId(String userId);
+    // 유저 아이디로 주소 갯수 검색
+    int countAllByUserUserId(String userId);
 
-    List<Address> findAllByUser_UserId(String userId);
-    Page<Address> findAllByUser_UserId(String userId, Pageable pageable);
+    // 유저 아이디로 주소 검색
+    List<Address> findAllByUserUserId(String userId);
+    // 유저 아이디로 주소 페이징 검색
+    Page<Address> findAllByUserUserId(String userId, Pageable pageable);
 
 }

@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PurchaseRepository extends JpaRepository<Purchase, Integer> {
-    Page<Purchase> findByUser_UserId(String userId, Pageable pageable);
-    int countByUser_UserId(String userId);
+    // 유저 아이디로 페이징 검색
+    Page<Purchase> findByUserUserId(String userId, Pageable pageable);
+    // 유저 아이디로 갯수 검색
+    int countByUserUserId(String userId);
 }
