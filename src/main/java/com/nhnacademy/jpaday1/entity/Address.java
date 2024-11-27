@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 @Getter
@@ -17,9 +18,11 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int addressId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @Setter
+    @ManyToOne
     private User user;
 
+    @Setter
     @NotBlank
     @Length(max = 100)
     private String address;

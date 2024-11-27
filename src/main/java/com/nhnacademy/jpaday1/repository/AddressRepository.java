@@ -1,6 +1,7 @@
 package com.nhnacademy.jpaday1.repository;
 
 import com.nhnacademy.jpaday1.entity.Address;
+import com.nhnacademy.jpaday1.repository.dto.AddressOnlyView;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,4 +17,7 @@ public interface AddressRepository extends JpaRepository<Address, Integer> {
     // 유저 아이디로 주소 페이징 검색
     Page<Address> findAllByUserUserId(String userId, Pageable pageable);
 
+
+    // dto 반환
+    AddressOnlyView findAddressOnlyByAddressId(int id);
 }

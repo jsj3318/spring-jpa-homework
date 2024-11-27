@@ -1,0 +1,19 @@
+### get user all
+GET localhost:8080/users
+
+### create user marco
+POST localhost:8080/users
+Content-Type: application/json
+
+{
+  "userId": "marco",
+  "userName": "마르코",
+  "userPassword": "4444",
+  "userBirth": "10000101",
+  "userAuth": "admin",
+  "userPoint": 1000000
+}
+
+### get user
+GET localhost:8080/users/marco
+

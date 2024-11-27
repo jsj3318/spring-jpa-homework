@@ -1,0 +1,38 @@
+### create addresses
+POST localhost:8080/address
+Content-Type: application/json
+
+{
+  "addresses": [
+    {
+      "userId": "marco",
+      "address": "address 1"
+    },
+    {
+      "userId": "marco",
+      "address": "address 2"
+    },
+    {
+      "userId": "marco",
+      "address": "address 3"
+    },
+    {
+      "userId": "marco",
+      "address": "address 4"
+    },
+    {
+      "userId": "marco",
+      "address": "address 5"
+    },
+    {
+      "userId": "marco",
+      "address": "address 6"
+    }
+  ]
+}
+
+### get address all
+GET localhost:8080/address?page=1&size=3
+
+### get only address
+GET localhost:8080/address/3

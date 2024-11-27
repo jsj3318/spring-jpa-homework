@@ -1,9 +1,12 @@
 package com.nhnacademy.jpaday1.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,8 +47,7 @@ public class User {
     @NotNull
     private ZonedDateTime createdAt;
 
-    @NotNull
+    @Null
     private ZonedDateTime latestLoginAt;
-
 
 }
