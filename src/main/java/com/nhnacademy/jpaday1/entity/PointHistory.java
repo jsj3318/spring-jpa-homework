@@ -21,7 +21,7 @@ public class PointHistory {
     private int historyId;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Users user;
+    private User user;
 
     @NotNull
     private int changeAmount;

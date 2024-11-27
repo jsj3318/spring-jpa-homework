@@ -21,7 +21,7 @@ public class Purchase {
     private int purchaseId;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Users user;
+    private User user;
 
     @NotNull
     private ZonedDateTime purchasedAt;
